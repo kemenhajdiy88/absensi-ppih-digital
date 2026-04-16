@@ -33,7 +33,8 @@ if check_password():
         list_nama = df_petugas['Nama_Lengkap'].dropna().tolist()
         list_jabatan = df_petugas['Jabatan_PPIH'].dropna().unique().tolist()
     except Exception as e:
-        st.error("Gagal membaca Google Sheets. Pastikan link di tab Secrets sudah benar dan sheet bernama 'daftar_petugas'.")
+        st.error("Terjadi masalah koneksi. Ini detail aslinya:")
+        st.write(e) # Ini akan memunculkan pesan dari sistem
         st.stop()
 
     # Form Absensi Utama
